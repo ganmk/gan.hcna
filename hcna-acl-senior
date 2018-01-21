@@ -1,0 +1,5 @@
+[RTA]acl 3000 # 指定ACL序号
+[RTA-acl-adv-3000]rule deny tcp source 192.168.1.0 0.0.0.255 destination 172.16.10.1 0.0.0.0 destination-port eq 21 #规则 拒绝源ip 192.168.1.0 目的ip 172.16.10.1 目的端口 21访问
+[RTA-acl-adv-3000]rule deny tcp source 192.168.2.0 0.0.0.255 destination 172.16.10.2 0.0.0.0 
+[RTA-acl-adv-3000]rule permit ip #允许ip通过
+[RTA-GigabitEthernet 0/0/0]traffic-filter outbound acl 3000 # 出站使用 序号 3000的访问控制 

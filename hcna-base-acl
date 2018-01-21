@@ -1,0 +1,4 @@
+[RTA]acl 2000 # 指定ACL的序号,取值范围如下: 2000～2999
+[RTA-acl-basic-2000]rule deny source 192.168.1.0 0.0.0.255 # 拒绝源地址网段192.168.1.0访问
+[RTA]interface GigabitEthernet 0/0/0 # 进入接口 0/0/0
+[RTA-GigabitEthernet 0/0/0]traffic-filter outbound acl 2000 # 在接口0/0/0  使用 出站 过滤规则 acl 2000
