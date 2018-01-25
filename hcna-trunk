@@ -1,9 +1,3 @@
-interface Eth-Trunk 1 #创建一个trunk端口
-interface GigabitEthernet0/0/1#进入接口1
-eth-trunk 1 #接口1加入trunk端口
-interface GigabitEthernet0/0/2#进入接口2
-eth-trunk 1#接口2加入trunk端口
-
 [sw2]lacp priority 100 #将 sw2作为主设备
 [sw2-g0/0/13]lacp priority  65535 #接口作为备份端口
 [sw2] max active-linknumber 2 #指定最大链接数 2
