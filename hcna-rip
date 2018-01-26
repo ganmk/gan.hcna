@@ -1,0 +1,13 @@
+[AR1]
+[AR1] int g0/0/0
+[AR1-GigabitEthernet0/0/0]ip address 12.1.1.1 24 
+[AR1-GigabitEthernet0/0/0]int lo0
+[AR1-LoopBack01] ip address 1.1.1.1 24
+[AR1-LoopBack01]q
+[AR1]display ip router table
+[AR1]rip
+[AR1-rip-1]version 2
+[AR1-rip-1]network 主类网络号
+
+
+
