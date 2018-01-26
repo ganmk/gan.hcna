@@ -8,6 +8,16 @@
 [AR1]rip
 [AR1-rip-1]version 2
 [AR1-rip-1]network 主类网络号
+--------------------------------------
 
 
+
+例 9- 4 配置 RIPv1 协议 
+A( config)# router rip 
+A( config- router)# network 192. 168. 1. 0 
+B( config)# router rip 
+B( config- router)# network 192. 168. 1. 0
+B( config- router)# network 10. 0. 0. 0 
+C( config- router)# network 192. 168. 1. 0 
+C( config- router)# network 10. 0. 0. 0
 
