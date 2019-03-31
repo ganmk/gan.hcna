@@ -1,0 +1,18 @@
+1： 应用层协议的配置方法：
+【DHCP】
+//客户端
+dhcp enable //启动DHCP 协议
+ip address dhcp-alloc //指定接口为DHCP客户端
+
+//服务端
+ip pool 地址池名称// 定义地址池信息
+network 网络地址 mask 网络掩码 //定义要分配的网络地址和掩码
+dns-list  DNS服务器地址 //定义 DNS服务器的地址
+gateway-list DNS网关地址 //定义网关设备地址
+excluded-ip-address 不进行分配的起始地址 不进行分配的终止地址
+lease day 地址租期 //   指定所分配地址的租期
+dhcp select global //将其指定为对外分配地址的DHCP服务器
+
+//dhcp 中继的配置
+dhcp server group DHCP服务器组名称 //创建一个DHCP服务器组
+
