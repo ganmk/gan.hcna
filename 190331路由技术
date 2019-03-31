@@ -1,0 +1,29 @@
+1: 路由器获得路由条目的三种方式如何配置：
+【静态】
+ip route-static 目的网络目的掩码下一跳接口 //在华为路由器上配置静态路由条目
+【RIP】
+rip 进程号 //区分本地路由器上不同的RIP进程
+version 2 //指定这里使用的RIP版本2
+undo summary  //取消RIP协议的自动汇总
+network 网络地址 //为了将各个路由器直连的网络通过RIP协议 进行通告
+rip summary-address 汇总路由汇总地址 //配置汇总RIP路由
+rip authentication-mode simple 认证密码 //配置RIP认证
+silent-interface 接口编号 //配置RIP被动接口
+rip version 1 //兼容 RIPv1协议
+【OSPF】
+ospf 进程号 //进入OSPF配置视图
+ospf 进程号 router-id 路由器ID //添加设备的路由器id
+area 区域编号 //进入到OSPF 1 区域 0d 配置视图中
+network 网络地址 反掩码 //指明要通过 OSPF 进行  通告的网络地址
+authentication-mode md5 cipher yeslab //采用MD5的方式对区域0 中的其他 OSPF 路由器 进行验证，验证码为 yeslab
+silent-interface 被动接口编号 //配置OSPF被动接口
+bandwidth-reference 参考带宽值 //修改参考带宽值  
+import-route 要导入的路由类型 //导入外部路由
+ospf enable 进程号  area 区域号 //将 xxx接口宣告到了OSPF 区域xxxx中
+abr-summary 汇总后地址 汇总后掩码 // 汇总 OSPF  路由
+default-route-advertise always //在OSPF中产生一条默认路由
+preference 优先级值 // 修改OSPF路由的优先级
+stub //末节区域 
+stub no-summary //完全末节区域
+vlink-peer  对端路由器ID //配置OSPF 虚链路
+
