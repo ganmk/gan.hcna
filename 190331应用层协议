@@ -15,4 +15,23 @@ dhcp select global //将其指定为对外分配地址的DHCP服务器
 
 //dhcp 中继的配置
 dhcp server group DHCP服务器组名称 //创建一个DHCP服务器组
+dhcp-server DHCP服务器地址 //指定DHCP服务器地址
+dhcp server relay //将其指定为DHCP 中继
+
+
+【FTP】
+//ftp 服务端
+ftp server enable //启动 ftp 服务器功能
+aaa// 进入 AAA 配置界面
+local-user 用户名 password cipher 密码//在这台路由器上创建一组用户名和密码
+local-user 用户名 service-type ftp //指定账号的服务类型 一个FTP账户
+local-user 用户名 ftp-directory 目录// 指定这个ftp服务器的目录
+local-user 用户名 privilege level 账户优先级//指定用户登录这个账户后的优先级
+
+【telnet】
+telnet server port 新telnet 端口号 //创建新的telnet端口
+telnet 目的地址 目的端口 // 发起telnet 测试
+
+
+
 
