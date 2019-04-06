@@ -32,6 +32,23 @@ local-user 用户名 privilege level 账户优先级//指定用户登录这个�
 telnet server port 新telnet 端口号 //创建新的telnet端口
 telnet 目的地址 目的端口 // 发起telnet 测试
 
+【SSH】
+
+//ssh服务端
+rsa local-key-pair create //在SSH服务器上创建本地密钥对
+stelnet server enable //启用 SSH服务器功能
+protocol inbound ssh//接口入站协议为SSH 协议
+display ssh server session //查看ssh服务器远程访问的情况
+
+
+//ssh 客户端 
+ssh client first-time enable //ssh客户端 保存公钥
+display ssh server status//查看SSH状态；
+
+
+
+
+
 
 
 
