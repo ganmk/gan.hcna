@@ -1,3 +1,9 @@
+华为交换机以太网接口的链路列席有哪几种？
+1：接入（access）模式，
+2：干道(trunk)模式， 
+3：杂合(hybrid)模式
+
+
 【链路聚合】
 interface Eth-Trunk 接口编号 //
 bpdu enable //启用 BPDU
@@ -12,14 +18,30 @@ port link-type trunk //将接口配置为干道模式
 port trunk allow-pass vlan 编号// 将接口划入的vlan，模式是trunk
 
 【Hybrid】
+hybrid模式的特点是什么？
+可以属于多个vlan ,可以接收和发送多个vlan的报文；
+
+trunk模式和hybrid模式的相同点和不同点是什么？
+相同点：他们都可以发送多个vlan的报文。
+不同点：trunk只发送允许的vlan
+
+
 port link-type hybrid //将接口的链路类型 改为 Hybrid模式
 port hybrid pvid vlan vlan编号//将这个Hybrid接口划分到了到vlan中
 port hybrid untagged vlan 10 20//将vlan 10和 vlan20 添加到与这个hybrid 接口通信的网络中
 
 【GVRP】
+使用gvrp可以起到什么作用？
+让交换机在网络中向其他交换机传播 vlan信息
+
 gvrp //启用gvrp
 gvrp registration fixed//指定该接口的GVRP工作模式为 固定模式
 gvrp的工作模式有哪些？
 固定模式：fixed , normal 模式
 
+
+
+【vlan间路由】
+什么叫做vlan间路由？
+vlan间的流量执行路由转发
 
