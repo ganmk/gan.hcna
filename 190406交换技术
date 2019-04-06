@@ -1,0 +1,25 @@
+【链路聚合】
+interface Eth-Trunk 接口编号 //
+bpdu enable //启用 BPDU
+mode lacp-static //将链路聚合接口的模式配置为 lacp-static
+eth-trunk 链路聚合接口编号 //让物理接口成为该链路聚合接口中 的一给成员物理接口
+
+【vlan】
+vlan batch 新建VLAN编号 //在交换机上创建我们需要的VLAN
+port link-type access //将接口配置为接入模式
+port default vlan 编号//将接口划入的vlan
+port link-type trunk //将接口配置为干道模式
+port trunk allow-pass vlan 编号// 将接口划入的vlan，模式是trunk
+
+【Hybrid】
+port link-type hybrid //将接口的链路类型 改为 Hybrid模式
+port hybrid pvid vlan vlan编号//将这个Hybrid接口划分到了到vlan中
+port hybrid untagged vlan 10 20//将vlan 10和 vlan20 添加到与这个hybrid 接口通信的网络中
+
+【GVRP】
+gvrp //启用gvrp
+gvrp registration fixed//指定该接口的GVRP工作模式为 固定模式
+gvrp的工作模式有哪些？
+固定模式：fixed , normal 模式
+
+
