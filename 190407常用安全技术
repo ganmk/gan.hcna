@@ -1,0 +1,55 @@
+【acl】
+rule permit source 网络地址反掩码//允许某网络
+rule deny source 网络地址反掩码//拒绝某网络
+
+traffic-filter 过滤方向 acl ACL编号 //使用这个ACL来过滤某个方向上的流量
+
+rule permit 高层协议 source 源地址反掩码 destination 目的网络反掩码 destination-port eq 目的协议 //允许某通信
+
+
+rule deny 高层协议 source 源地址反掩码 destination 目的网络反掩码 destination-port eq 目的协议 //拒绝某通信
+
+【IPSec VPN】
+
+ike proposal 编号//创建一个IKE策略集
+encryption-algorithm 加密算法 //指定IKE策略中的加密算法
+authentication-algorithm 认证算法 //指定IKE策略中的认证算法
+
+ike peer 名称 v1 //设置IKE 阶段1 参数，
+ike-proposal IKE 策略编号 //调用在环节2中配置的IKE策略
+pre-shared-key 密码类型密码 //设置预共享密钥：
+remote-address  对等体地址 //指向VPN 对等体对端，用来建立vpn连接的IP地址
+local-address 本地地址 //设置这台路由器上用来与对端建立vpn连接的ip地址
+ipsec proposal 名称 创建一个IPSEC安全策略
+encapsulation-mode 模式 //指定加密流量的方式 
+transform 协议 //定义用来保护流量的安全协议 
+esp encryption-algorithm 加密协议 //指定ESP的加密方式
+esp authentication-algorithm 加密协议 //指定ESP的认证方式
+
+//关联上述策略
+ipsec policy 策略名编号 isakmp //创建策略集
+ike-peer 阶段1 参数名//调用ipsec安全策略
+proposal IPSec 安全策略名 //ipsec 安全策略
+security acl ACL编号 //调用高级ACL
+
+//接口上调用策略
+ipsec policy 策略集名称 //调用策略集
+
+【GRE隧道】
+interface Tunnel 隧道接口编号//创建一个虚拟的隧道接口
+tunnel-protocol gre //该隧道的协议指定为 GRE协议
+source 源 ip 地址 /源物理接口 //指定隧道的实际源地址/接口；
+source 目的ip地址 //指定隧道的实际目的地址
+
+
+
+
+
+
+
+
+
+
+
+
+
