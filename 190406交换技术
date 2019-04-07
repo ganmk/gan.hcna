@@ -42,6 +42,9 @@ gvrp的工作模式有哪些？
 
 
 【vlan间路由】
-什么叫做vlan间路由？
+什么叫做vlan间路由 实现通信？
 vlan间的流量执行路由转发
+
+dotlq termination vid vlan编号 //启用 dotlq 协议
+arp broadcast enable //在子接口下启用ARP广播
 

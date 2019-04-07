@@ -1,0 +1,67 @@
+【HDLC】
+HDLC的全称叫什么？
+高级数据链路控制
+link-protocol hdlc //让串行接口为数据帧在链路层封装HDLC
+
+ip address unnumbered interface Loopback 环回接口编号     //将它的IP地址配置为借用某环回接口的地址
+
+【PPP】
+ppp是什么？
+它是一种链路协议，用来在全双工的异步链路上完成点到点的传输。
+link-protocol ppp//华为路由器串行接口默认的封装协议就是PPP协议
+local-user 用户名 password cipher 密码 //设置用户名 密码
+ppp authentication-mode pap //指定该接口使用PAP要求对端设备执行认证
+ppp pap local-user 用户名 password cipher 加密密码 //让该接口通过 PAP协议 向 路由器提供认证所需的用户名和密码信息
+
+
+【帧中继】
+link-protocol fr //在所有路由器的串行接口上封装帧中继协议
+undo fr inarp // 关闭静态映射
+fr map ip 对端IP地址 本地DLCI号 broadcast //手动映射配置
+
+【PPPoE】
+什么是PPPoE?
+通过在以太网上建立点到点的PPP会话
+ip pool 地址池名称 //进入地址池
+
+interface Virtual-Template 编号 // 创建虚拟模板并进入该虚拟模板的接口配置
+ppp authentication-mode 认证方式//定义 PPP 认证协议
+ip address IP 地址掩码 //命令配置这个虚拟模板接口的IP地址：
+remote address pool 地址池名称 //向远端客户端分配地址的地址池关联
+pppoe-server bind Virtual-Template 模板编号//为这个接口绑定一个虚拟模板
+
+//客户端配置：
+interface dialer 拨号接口编号 //创建和配置一个拨号接口
+dialer bundle 编号//生成一个可以在接口模式下进行调用的拨号
+ip address ppp-negotiate //将IP地址 指定为自动协商
+ppp chap user 用户名//设置客户端在拨号时使用的用户名
+ppp chap password cipher 密码 //设置客户端在拨号时使用的密码
+pppoe-client dial-bundle-number 编号//调用刚刚生成的拨号 bundle 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
