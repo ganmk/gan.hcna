@@ -39,6 +39,27 @@ ppp chap password cipher 密码 //设置客户端在拨号时使用的密码
 pppoe-client dial-bundle-number 编号//调用刚刚生成的拨号 bundle 
 
 
+【静态NAT转换】配置
+nat static global 外部地址 inside 内部地址//配置静态
+nat server protocol tcp/udp global 外部地址 外部协议 inside 内部地址 内部协议  
+//对地址和端口进行转换
+
+【动态网络地址NAT配置】
+acl ACL编号 //创建一个ACL
+rule 语句编号 permit source 要转换的网络地址 该网络的反掩码//acl 要匹配的地址
+nat address-group [地址池编号][首个地址][最后一个地址]//定义转换后的地址池
+nat outbound ACL编号 address-group 地址池编号 //将要转换的地址和转换后的地址关联起来
+
+
+
+
+ 
+
+
+
+
+
+ 
 
 
 
