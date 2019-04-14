@@ -1,0 +1,50 @@
+1：vrp命令行的基础知识
+
+用户视图 》查看运行状态 
+系统视图 》 配置系统参数
+接口视图》 配置接口参数
+协议视图  配置路由协议
+
+
+
+2：vrp命令行进行基础配置
+
+启动完成 输入 Y 选择手动配置
+sysname 配置设备名称
+clock timezone 设置所在时区
+clock datetime 设置当前时间和日期
+clock daylight-saving-time 设置采用夏时制
+header login 配置用户登录前显示的标题
+header shell 配置在用户登录后显示的标题
+
+
+command-privilege level 3 view user save //执行save命令需要3级的权限
+
+user-interface maximum-vty number 
+//可以配置同时登录到设备的 VTY类型用户界面的最大个数
+
+idle-timeout 设置超时时间
+screen-length 设置指定终端屏幕的临时显示行数
+
+history-command max-size 设置历史命令缓冲区的大小
+
+user privilege 配置指定用户界面下的用户级别
+
+set authentication password 配置 本地认证密码
+
+
+int g0/0/0 //进入接口
+ip address <ip-address> {mask|mask-length} //配置接口地址
+
+
+
+
+
+3：华为网络设备支持多少个用户同时使用console口登录？
+只能有一个用户登录console界面。
+
+
+4：在使用命令interface loopback interface 0 之后，loopback 0接口的状态是什么？
+
+一直保持up状态，除非手动关闭。
+
