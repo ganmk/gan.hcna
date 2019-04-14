@@ -1,0 +1,28 @@
+1:ftp和tftp的应用
+
+
+
+2：vrp升级的方法
+
+ftp 10.1.1.2 和ftp服务器建立连接
+get 文件//取得ftp服务器上的vrp文件
+
+tftp 10.1.1.2 get 文件名//可以从tftp服务器获取VRP文件
+
+startup sysname-software 文件名 //指定设备下次启动的系统文件，vrp系统文件必须在存储根目录
+
+display startup//查看启动文件是否变更
+
+root //重启设备  
+
+3：设备作为FTP客户端时，如何从服务器下载VRP?
+
+保证客户端和服务器之间的通信，
+客户端使用 ftp [ip address] 命令与服务器建立FTP连接 ，建立连接之后输入正确的用户名和密码
+在使用 get 文件名// 即可下载VRP。
+
+
+4:在完成VRP升级并重启之后，管理员如何确认升级成功？
+
+使用 display startup 命令验证系统启动的vrp软件，来判断
+
