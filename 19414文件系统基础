@@ -1,0 +1,32 @@
+1：文件系统的基本操作：
+copy //复制文件
+move //移动文件
+rename //重命名文件
+mkdir //创建新目录
+save [configuration-file]//保存当前配置信息到系统默认的存储路径中
+默认文件名为 vrpcfg.zip
+
+display startup //启动文件查询
+
+display current-configuration //显示当前配置文件
+
+display saved-configuration//显示保存的配置文件
+
+display startup //查看系统启动配置参数
+
+startup saved-configuration [configuration-file-name] //下次启动使用的配置文件
+
+compare configuration //比较当前配置与下次启动的配置
+
+reset saved-configuration //清除下次启动时加载的配置文件
+
+2：设备中的文件属性中有drw,其中d代表什么含义？
+d表明是个目录，r，w 是读写，可读可写
+
+3：如果设备中有多个配置文件，如何指定下次启动时使用的配置文件？
+
+startup saved-configuration [configuration-file-name] 命令 
+//配置文件名包括 文件名和拓展名
+
+
+
