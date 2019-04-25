@@ -1,0 +1,35 @@
+1：RSTP的特性
+快速收敛
+proposal
+agreement
+
+
+
+2:配置RSTP
+
+
+系统视图：
+
+stp mode rstp
+
+接口视图：
+
+stp edged-port enable //配置边缘端口
+
+stp root-protection //根保护
+
+系统视图：
+
+stp bpdu-protection // BPDU保护
+
+
+接口视图：
+stp loop-protection // 环路保护
+
+3：P/A进程同步的作用是什么
+
+
+
+
+
+
