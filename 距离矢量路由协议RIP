@@ -1,0 +1,37 @@
+1: RIP的基本工作原理
+发送路由更新请求
+网络稳定后，路由会周期性发送路由更新信息
+
+
+
+2：rip的配置
+
+rip process-id 使能RIP进程
+network network-address 可用于RIP中通告网络
+rip metricin metric value // 修改接口上应用的度量值
+rip metricout // 通告RIP路由时修改路由的度量值
+
+rip output // 配置 允许 一个接口 发送RIP更新消息
+
+undo rip output //禁止指定接口发送RIP更新消息
+// 防止 undo rip output 来防止连接外网的接口发布内部路由
+
+rip input //用来配置允许指定接口接收RIP报文
+undo rip input //禁止 指定接口接收 RIP 报文
+
+silent-interface //抑制接口  ,使其只接收 RIP 报文 ，不发送报文
+silent-interface all //所有接口都被抑制
+peer <ip address> //与对端路由器建立关系
+
+
+
+
+
+
+
+
+3：rip的 路由 跳数 是在什么 时候   增加 的  
+
+在 发出路由通告之前增加的
+
+
