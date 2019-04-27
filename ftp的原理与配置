@@ -1,0 +1,22 @@
+1：FTP的工作原理
+使用两个tcp连接
+控制连接，  21号端口
+数据连接  20号端口
+
+2：FTP的基本配置
+ftp server enable 使用 FTP功能
+set default ftp-directory 设置 ftp 用户的默认工作目录
+aaa 进入 AAA视图
+
+
+3：FTP服务默认使用服务器哪些端口？
+tcp的 21端口 控制连接
+ 20端口  建立数据连接
+
+
+
+4: 用户反馈没有权限  去访问 FTP服务器  上的目录，应该如何解决？
+set default ftp-directory <directory location> 建立默认目录
+
+
+
