@@ -1,0 +1,25 @@
+1：telnet的应用场景
+对设备远程管理和维护
+
+2：telnet的工作原理
+tcp协议， 服务端口号：23
+
+
+3：telnet的基本配置
+user-interface maximum-vty //调整vty界面的数量
+
+authentication-mode password //配置 VTY通过 密码对用户进行认证
+
+telnet ip 与服务器建立telnet 连接
+
+
+4：如果网络设备已经配置完成Telnet 服务 ，但是 用户仍然不能实现远程访问，原因可能是什么？
+
+检测密码
+if(密码正确)
+{
+  查看 最大限制，
+  增加用户数量 ，user-interface maximum-vty <0-15>
+}
+
+
