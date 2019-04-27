@@ -1,0 +1,21 @@
+1： OSPF的工作原理
+LSA 泛洪  
+
+SPF算法 
+
+路由计算
+路由表
+
+
+2： OSPF的 基本配置
+
+ospf [process id]  用来使能 OSPF,在该命令中 可以配置进程ID
+
+3： OSPF Hello 报文中Router Dead Interval 字段的作用是什么  
+代表 死亡间隔
+死亡间隔 是 hello 间隔的 4倍
+
+
+4：在 广播网络 中  ,  DR和  BDR 用 来 接收  链路  状态  更新  报文  的 地址是什么
+组播地址 224.0.0.0
+
