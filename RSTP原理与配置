@@ -27,7 +27,7 @@ stp bpdu-protection // BPDU保护
 stp loop-protection // 环路保护
 
 3：P/A进程同步的作用是什么
-
+避免产生临时环路
 
 
 

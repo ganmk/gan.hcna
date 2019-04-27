@@ -1,0 +1,22 @@
+1： 静态路由的应用场景
+
+结构简单的网络
+
+改进网络的性能
+
+
+2：静态路由的配置
+
+ip route-static ip-addres {mask|mask-length} interface-type interface-number {nexthop-address} 命令 来配置静态路由
+
+
+3：如何配置能够将静态路由配置为浮动静态路由？
+
+调整静态路由的优先级
+修改为浮动静态路由
+
+
+4：配置缺省路由时, 目的网络地址是什么？
+
+0.0.0.0 代表任意网络
+
