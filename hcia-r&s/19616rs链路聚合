@@ -1,0 +1,52 @@
+1：链路聚合的应用场景？
+一般部署在核心节点，提高整个网络的数据吞吐量
+2：链路聚合的模式有哪些？
+手工负载分担模式 ：所有活动接口都参与数据的转发，分担负载流量
+LACP模式 ： 支持链路备份
+
+3：链路聚合的原理：
+
+
+
+4：链路聚合的配置：
+
+二层链路聚合配置：
+[SWA] interface Eth-Trunk 1
+[swa-eth-trunk1] interface giabitethernet0/0/1
+[swa-giabitethernet0/0/1]eth-trunk1
+[swa-giabitethernet0/0/1]interface giabitethernet0/0/2
+[swa-giabitethernet0/0/2]eth-trunk1
+
+三层链路聚合配置：
+[RTA] interface eth-trunk1 
+[rta-eth-trunk1] undo portswitch
+[rta-eth-trunk1] ip address 100.1.1.1 24
+[rta-eth-trunk1] quit
+[rta]interface giabitethernet0/0/1
+[rta-giabitethernet0/0/1] eth-trunk1
+
+[rta-giabitethernet0/0/1] quit
+
+[rta] interface giabitethernet0/0/2
+
+[rta-giabitethernet0/0/2]eth-trunk1
+[rta-giabitethernet0/0/2] quit
+
+
+5：哪种链路聚合方法可以使用链路备份？
+只有LACP模式支持备份成员链路。
+如需建立备份链路模式，应使用LACP模式的链路聚合。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
